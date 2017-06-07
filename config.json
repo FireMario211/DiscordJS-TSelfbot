@@ -1,5 +1,5 @@
 {
     "token": "YOUR_TOKEN_HERE",
     "prefix": "T!",
-    "embedeval": true,
+    "favoritehexcolor": "0x00FF00"
 }
