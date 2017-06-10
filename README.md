@@ -5,19 +5,14 @@ A Discord.JS Selfbot with features! Like seeing your status and seeing who is re
 You will need NodeJS the latest version, and you will need the latest version of **Discord.JS@11.1.0** or **Discord.JS@latest**
 Secondly, you will need these Node Modules:
 * discord.js
-* node-opus
 * jimp
-* ytdl-core
-
-# Music Bot Requirements
-In order to actually play music, you will need FFMPEG, you will also need these node modules: node-opus, ytdl-core
+* figlet
 
 # How to install these modules?
 Firstly you will need to go into the TSelfBot directory in command prompt and type this in:
 ```
 npm install --save discord.js@11.1.0
-npm install node-opus
-npm install ytdl-core
+npm install figlet
 npm install jimp
 ```
 
