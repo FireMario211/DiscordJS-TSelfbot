@@ -24,7 +24,7 @@ bot.on('message', message => {
     
     
 	if (!message.content.startsWith(config.prefix)) return;
-    console.log(message.author.tag);
+    console.log(message.author.tag + " you used " + command);
 	let command = message.content.split(" ")[0];
 	command = command.slice(config.prefix.length);
 
