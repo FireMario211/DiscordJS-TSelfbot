@@ -19,7 +19,7 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
-    if(message.author.id !== "126119057232625664") return;
+    if(message.author.id !== bot.user.id) return;
     
     
     
