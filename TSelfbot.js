@@ -45,7 +45,7 @@ let args = message.content.split(" ").slice(1);
         
     
     const embed = new discord.RichEmbed()
-    .setTitle(args.join(" "))
+    .setDescription(args.join(" "))
     .setColor(config.favoritehexcolor)
     message.channel.send({embed, embed})
 	}
