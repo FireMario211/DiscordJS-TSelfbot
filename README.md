@@ -14,4 +14,4 @@ In order to actually play music, you will need FFMPEG, you will also need these 
 
 # How to install these modules?
 Firstly you will need to go into the TSelfBot directory in command prompt and type this in:
-`test`
+```test```
