@@ -175,14 +175,14 @@ function onBuffer(err, buffer) {
 
 
 	if (command === "8ball"){
-        message.delete()
+       
 		message.channel.sendEmbed(new discord.RichEmbed().setDescription(':question: Question: **' + args.join(" ") + '**\n:8ball: Your answer is: **' + magic8ball() + '**').setColor(config.favoritehexcolor));
 	}
 
 
 
 	if (command === "dice"){
-        message.delete()
+        
 		message.channel.sendEmbed(new discord.RichEmbed().setTitle("You rolled a " + doRoll() + "!").setColor(config.favoritehexcolor))
 	}
 
@@ -215,7 +215,7 @@ function onBuffer(err, buffer) {
 
 if (command === "help"){
     message.delete()
-	message.channel.sendEmbed(new discord.RichEmbed().setTitle("Command List").setColor(0xADD8E6).addField(config.prefix + "help", "You're in it right now! Shows a list of commands!").addField(config.prefix + "embed", "Says what you say, but in embed!").addField(config.prefix + "ascii", "Shows your message that you typed with Ascii! (Limit is 16, if you go above the limit it will look like someone messed it up)").addField(config.prefix + "play", "Play music! (Requires FFMPEG)").addField(config.prefix + "stop", "Stop the music! (Requires FFMPEG)").addField(config.prefix + "8ball", "Tells your future."))
+	message.channel.sendEmbed(new discord.RichEmbed().setTitle("Command List").setColor(0xADD8E6).addField(config.prefix + "help", "You're in it right now! Shows a list of commands!").addField(config.prefix + "embed", "Says what you say, but in embed!").addField(config.prefix + "ascii", "Shows your message that you typed with Ascii! (Limit is 16, if you go above the limit it will look like someone messed it up)").addField(config.prefix + "eval", "Evaluate code! **Could be VERY dangerous to run scripts from others**").addField(config.prefix + "setgame", "Sets your game!").addField(config.prefix + "8ball", "Tells your future."))
 }
 
 
@@ -224,32 +224,8 @@ if (command === "help"){
 
 
 
-if (command === "play"){
-    if(!args[0]){
-        message.reply("No music found.")
-        return;
-    }
-	const ytdl = require('ytdl-core');
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`Please be in a voice channel first!`);
-    voiceChannel.join()
-      .then(connnection => {
-        const stream = ytdl(args[0], { filter: 'audioonly' });
-        const dispatcher = connnection.playStream(stream);
-        dispatcher.on('end', () => voiceChannel.leave());
-      });
-
-}
 
 
-
-
-
-if (command === "stop"){
-	const voiceChannel = message.member.voiceChannel;
-	voiceChannel.leave();
-	message.channel.sendEmbed(new discord.RichEmbed().setTitle("Stopped.").setColor(0xFF0000))
-}
 
 
 
