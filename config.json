@@ -1,5 +1,6 @@
 {
     "token": "YOUR_TOKEN_HERE",
     "prefix": "T!",
-    "favoritehexcolor": "0x00FF00"
+    "favoritehexcolor": "0x00FF00",
+    "rainbowembed": false
 }
