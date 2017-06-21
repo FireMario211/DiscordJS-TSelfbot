@@ -29,6 +29,7 @@ then it should look like this: (but the token is cut out because of reasons)
     "token": "mfa.XMZCD-tsVP",
     "prefix": "T!",
     "favoritehexcolor": "0x00FF00"
+    "rainbowembed": false
 }
 ```
 
@@ -39,6 +40,8 @@ If you want to change the `prefix`, go into the `config.json` and look for "pref
 If you want to change the `embed` for your favorite color, you first have to open the `config.json` and search (your color) hex code and copy the hex code and paste it, do not remove the 0x or problems will occur, Here is an example of a hex code: 
 `"favoritehexcolor": "0xFFFF00"` that is Yellow if you are wondering.
 
+**Add rainbow embeds**
+If you want a rainbow embed, like so that it always changes the color, you can enable it by going into the `config.json` and changing `"rainbowembed": false` to `"rainbowembed": true`, then you will have rainbow embed instead of your favorite color!
 
 # Conclusion
 Then your finished! Just run the run.bat and then your in! Just type T!help and see the commands then use them!
