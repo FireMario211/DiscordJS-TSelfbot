@@ -13,6 +13,10 @@ const config = require('./config.json')
 bot.login(config.token)
 
 
+bot.on('error', e => {
+	console.log("Error! " + e)
+})
+
 bot.on('ready', () => {
 	console.log('TSelfbot is ready! You are ' + bot.user.username + '#' + bot.user.discriminator + ' and your on ' + bot.guilds.size + ' guilds!')
 
@@ -24,10 +28,14 @@ bot.on('message', message => {
     
     
 	if (!message.content.startsWith(config.prefix)) return;
-    console.log(message.author.tag + " you used " + command);
+
+
+var crypto = require("crypto");
+var rainbowhex = crypto.randomBytes(3).toString('hex');
+
 	let command = message.content.split(" ")[0];
 	command = command.slice(config.prefix.length);
-
+console.log(message.author.tag + " you used " + command);
 let args = message.content.split(" ").slice(1);
 
     var msgid;
@@ -41,7 +49,13 @@ let args = message.content.split(" ").slice(1);
 	if (command === "embed"){
         message.delete()
 
-        
+        if(config.rainbowembed === true){
+    const embed = new discord.RichEmbed()
+    .setDescription(args.join(" "))
+    .setColor(rainbowhex)
+    message.channel.send({embed, embed})
+        	return
+        }
         
     
     const embed = new discord.RichEmbed()
@@ -56,6 +70,124 @@ let args = message.content.split(" ").slice(1);
 		return rand[Math.floor(Math.random()*rand.length)];
 
 	}
+
+	if (command === "kill"){
+		//Credit DavidThe$$$#9987 for the code
+  let sabotage = args.join(' ');
+  if (sabotage < 1) {
+    return message.edit('Put something to kill, like mention a user, or use an emoji')
+  }
+  message.edit(`▄︻̷̿┻̿═━一 ${sabotage} :three:`)
+  setTimeout(function() {
+    message.edit(`▄︻̷̿┻̿═━一 ${sabotage} :two:`)
+  }, 1000)
+  setTimeout(function() {
+    message.edit(`▄︻̷̿┻̿═━一 ${sabotage} :one:`)
+  }, 2000)
+  setTimeout(function() {
+    message.edit(`▄︻̷̿┻̿═━一 :boom:`)
+  }, 3000)
+  setTimeout(function() {
+    message.edit(`▄︻̷̿┻̿═━一 :fire:`)
+  }, 4000)
+  setTimeout(function() {
+    message.edit(`▄︻̷̿┻̿═━一 :skull:`)
+  }, 5000)
+}
+
+	if (command === "fakevirus"){
+		let virusname = args.join(' ');
+		if(virusname < 1){
+			return message.edit('Please type in a name for the virus')
+		}
+		message.edit({embed: new discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)})
+  setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓ ] - 1%').setColor(0xFF0000)})
+  }, 1000)
+  setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓ ] / 2%').setColor(0xFF0000)})
+  }, 2000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓ ] - 2%').setColor(0xFF0000)})
+  }, 3000)
+  setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓ ] \ 2%').setColor(0xFF0000)})
+  }, 4000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓ ] - 28%').setColor(0xFF0000)})
+  }, 5000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓ ] / 28%').setColor(0xFF0000)})
+  }, 6000)
+
+
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] - 78%').setColor(0xFF0000)})
+  }, 7000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] \ 78%').setColor(0xFF0000)})
+  }, 8000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] - 78%').setColor(0xFF0000)})
+  }, 9000)
+
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] / 96%').setColor(0xFF0000)})
+  }, 10000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] - 96%').setColor(0xFF0000)})
+  }, 11000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] \ 96%').setColor(0xFF0000)})
+  }, 12000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] - 96%').setColor(0xFF0000)})
+  }, 13000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] / 96%').setColor(0xFF0000)})
+  }, 14000)
+
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] - 99%').setColor(0xFF0000)})
+  }, 15000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 96%').setColor(0xFF0000)})
+  }, 16000)
+
+
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] - 100%').setColor(0xFF0000)})
+  }, 17000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Stealing Token...').setColor(0xFF0000)})
+  }, 19000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Uploading Token to sql://localhost:8080/encrypted_' + virusname + ".key").setColor(0xFF0000)})
+  }, 22000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 5...').setColor(0xFF0000)})
+  }, 25000)
+    setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 4...').setColor(0xFF0000)})
+  }, 26000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 3...').setColor(0xFF0000)})
+  }, 27000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 2...').setColor(0xFF0000)})
+  }, 28000)
+     setTimeout(function() {
+    message.edit({embed: new discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 1...').setColor(0xFF0000)})
+  }, 29000)
+     setTimeout(function() {
+    message.edit(':boom: :boom: :boom: :boom: :boom: :boom: :boom: :boom: :boom:')
+  }, 30000)
+
+
+
+	}
+
+
 
 	if (command === "sad"){
 
