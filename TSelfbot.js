@@ -1,7 +1,8 @@
 /**
 
 	TSelfbot By FireMario211
-		Version 1.1
+	   Version 1.1-beta.0
+	       Github
 
 **/
 console.log('TSelfbot - Loading...')
