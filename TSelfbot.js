@@ -1,3 +1,9 @@
+/**
+
+	TSelfbot By FireMario211
+		Version 1.1
+
+**/
 console.log('TSelfbot - Loading...')
 
 const discord = require('discord.js') // discord.js
