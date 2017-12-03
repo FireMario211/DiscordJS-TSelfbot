@@ -1,0 +1,23 @@
+{
+  "name": "discordjs-tselfbot",
+  "version": "v1.1-beta.1",
+  "description": "A Discord.JS Selfbot with features! Like seeing your status and seeing who is recommended to be a friend (well if you want to add random people, I dont know), You can also add your own prefix! and add your own embed!",
+  "main": "TSelfbot.js",
+  "dependencies": {
+    "check-update-github": "0.0.4",
+    "discord.js": "^11.1.0",
+    "figlet": "^1.2.0",
+    "jimp": "^0.2.28"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FireMario211/DiscordJS-TSelfbot.git"
+  },
+  "author": "FireMario211 <firemario07@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/FireMario211/DiscordJS-TSelfbot/issues"
+  },
+  "homepage": "https://github.com/FireMario211/DiscordJS-TSelfbot#readme"
+}
